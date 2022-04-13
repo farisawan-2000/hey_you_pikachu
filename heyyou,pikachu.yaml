@@ -1,0 +1,97 @@
+name: Hey You, Pikachu (North America)
+sha1: da1a1e47a86720f9d54fb2d2d247480041bda824
+options:
+  basename: heyyou,pikachu
+  target_path: baserom.z64
+  base_path: .
+  compiler: IDO
+  find_file_boundaries: True
+  header_encoding: ASCII
+  platform: n64
+  # undefined_funcs_auto_path: undefined_funcs_auto.txt
+  # undefined_syms_auto_path: undefined_syms_auto.txt
+  symbol_addrs_path: symbol_addrs.txt
+  # undefined_syms_path: undefined_syms.txt
+  # asm_path: asm
+  # src_path: src
+  # build_path: build
+  # extensions_path: tools/splat_ext
+  # auto_all_sections: True
+segments:
+  - name: header
+    type: header
+    start: 0x0
+  - name: boot
+    type: bin
+    start: 0x40
+  - name: main
+    type: code
+    start: 0x1000
+    vram: 0x80000400
+    subsegments:
+      - [0x1000, asm]
+      - [0x3FD0, asm]
+      - [0x4640, asm]
+      - [0x4750, asm]
+      - [0x5270, asm]
+      - [0x5570, asm]
+      - [0x56D0, asm]
+      - [0x5DA0, asm]
+      - [0x63D0, asm]
+      - [0x8200, asm]
+      - [0xB3A0, asm]
+      - [0xCD40, asm]
+      - [0xD3F0, asm]
+      - [0x103B0, asm]
+      - [0x128B0, asm]
+      - [0x12DB0, asm]
+      - [0x13D30, asm]
+      - [0x141C0, asm]
+      - [0x14260, asm]
+      - [0x15760, asm]
+      - [0x17DD0, asm]
+      - [0x17F00, asm]
+      - [0x1CA70, asm]
+      - [0x1CD10, asm]
+      - [0x1D460, asm]
+      - [0x1E2C0, asm]
+      - [0x1F430, asm]
+      - [0x1FD10, asm]
+      - [0x1FDF0, asm]
+      - [0x200F0, asm]
+      - [0x20280, asm]
+      - [0x20F40, asm]
+      - [0x212B0, asm]
+      - [0x221A0, asm]
+      - [0x23D30, asm]
+      - [0x25C30, asm]
+      - [0x27F80, asm]
+      - [0x28030, asm]
+      - [0x2C2B0, asm]
+      - [0x2DC10, asm]
+      - [0x2DE60, asm]
+      - [0x2F760, asm]
+      - [0x33BA0, asm]
+      - [0x347D0, asm]
+      - [0x34DC0, asm]
+      - [0x36F30, asm]
+      - [0x386E0, asm]
+      - [0x38B00, asm]
+      - [0x39750, asm]
+      - [0x3D100, asm]
+      - [0x40300, asm]
+      - [0x40790, asm]
+      - [0x40830, asm]
+      - [0x41040, asm]
+      - [0x41B20, asm]
+      - [0x42270, asm]
+      - [0x42EA0, asm]
+      - [0x43440, asm]
+      - [0x49B50, asm]
+      - [0x49B60, asm]
+      - [0x49D60, asm]
+      - [0x4A890, asm]
+      - [0x4B6C0, asm]
+  - type: bin
+    start: 0x4B790
+  - [0x1000000]
