@@ -1,4 +1,4 @@
-glabel func_800004B4
+glabel IdleMain
 /* 10B4 800004B4 27BDFFE8 */  addiu      $sp, $sp, -0x18
 /* 10B8 800004B8 AFBF0014 */  sw         $ra, 0x14($sp)
 /* 10BC 800004BC 0C00DEB8 */  jal        func_80037AE0

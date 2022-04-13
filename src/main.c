@@ -1,10 +1,23 @@
+#include <ultra64.h>
 #include "common.h"
 
-#pragma GLOBAL_ASM("asm/nonmatchings/main/func_80000450.s")
+extern OSThread gIdleThread;
+void IdleMain(void *);
+// this points to end of stack
+extern u64 D_800A9DE8[];
 
+void main(void) {
+    // __osInitialize_common();
+    osInitialize();
+    // osAiSetFrequency(0x2710);
+    osCreateThread(&gIdleThread, 10, &IdleMain, 0, &D_800A9DE8, 10);
+    osStartThread(&gIdleThread);
+}
+
+// IdleMain
 #pragma GLOBAL_ASM("asm/nonmatchings/main/func_800004B4.s")
 
-void __dummy(void) {
+void func_80000500(void) {
 }
 
 void func_80000508(void) {
