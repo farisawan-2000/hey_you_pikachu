@@ -120,7 +120,7 @@ extern void __osInitialize_emu(void);
 #define osInitialize()           \
 {                                \
     __osInitialize_common();     \
-    __osInitialize_autodetect(); \
+    osAiSetFrequency(10000); \
 }
 #endif
 

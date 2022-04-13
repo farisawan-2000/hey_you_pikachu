@@ -9,7 +9,7 @@ extern u64 D_800A9DE8[];
 void main(void) {
     // __osInitialize_common();
     osInitialize();
-    // osAiSetFrequency(0x2710);
+    // osAiSetFrequency(10000);
     osCreateThread(&gIdleThread, 10, &IdleMain, 0, &D_800A9DE8, 10);
     osStartThread(&gIdleThread);
 }

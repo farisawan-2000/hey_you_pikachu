@@ -27,6 +27,8 @@ build/%.c.o: %.c
 	$(IDO) -c -Wab,-r4300_mul -non_shared -G0 -Xcpluscomm -Xfullwarn -signed -O2 -mips2 -32 \
 	-nostdinc -D_LANGUAGE_C -DTARGET_N64 -DF3DEX_GBI_2 $(I_FLAGS) \
 	-o $@ build/$<
+	python3 tools/asm-processor/asm_processor.py -O2 $< --post-process $@ \
+		--assembler "mips64-elf-as -mabi=32 -march=vr4300 -mtune=vr4300 -Iinclude" --asm-prelude tools/asm-processor/prelude.inc
 
 build/%.bin.o: %.bin
 	mips64-elf-ld -r -b binary -o $@ $<

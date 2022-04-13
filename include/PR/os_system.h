@@ -73,7 +73,7 @@ extern OSIntMask __OSGlobalIntMask; /* global interrupt mask */
 
 #define osInitialize()          \
     __osInitialize_common();    \
-    __osInitialize_autodetect()
+    osAiSetFrequency(10000)
 
 void __osInitialize_common(void);
 void __osInitialize_autodetect(void);
