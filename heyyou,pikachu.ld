@@ -37,7 +37,8 @@ SECTIONS
     .main 0x80000400 : AT(main_ROM_START) SUBALIGN(16)
     {
         main_TEXT_START = .;
-        build/asm/1000.s.o(.text);
+        build/asm/entry.s.o(.text);
+        build/src/main.c.o(.text);
         build/asm/3FD0.s.o(.text);
         build/asm/4640.s.o(.text);
         build/asm/4750.s.o(.text);

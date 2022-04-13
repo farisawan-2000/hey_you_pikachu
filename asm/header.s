@@ -2,7 +2,7 @@
 
 .word 0x80371240       /* PI BSB Domain 1 register */
 .word 0x0000000F       /* Clockrate setting */
-.word _start       /* Entrypoint address */
+.word 0x80000400       /* Entrypoint address */
 .word 0x0000144B       /* Revision */
 .word 0xD3F10E5D       /* Checksum 1 */
 .word 0x052EA579       /* Checksum 2 */

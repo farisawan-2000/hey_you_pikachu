@@ -29,7 +29,8 @@ segments:
     start: 0x1000
     vram: 0x80000400
     subsegments:
-      - [0x1000, asm]
+      - [0x1000, asm, entry]
+      - [0x1050, c, main]
       - [0x3FD0, asm]
       - [0x4640, asm]
       - [0x4750, asm]
