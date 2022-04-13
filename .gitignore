@@ -1,4 +1,5 @@
 baserom.z64
 assets/*.bin
+build/*
 
 
